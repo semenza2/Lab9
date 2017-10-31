@@ -103,8 +103,21 @@ public class Colosseum {
      *         <p>
      */
     public static Pokemon buildPokemon() {
-        Pokemon returnPokemon = null;
-        return returnPokemon;
+        System.out.println("Select from the following Pokemon types:\n 1 - Electric Pokemon\n"
+    + "2 - Fire Pokemon\n3 - Water Pokemon");
+        int input = myScan.nextInt();
+        Pokemon pokemon = new Pokemon();
+        switch (input) {
+            case 1:  pokemon = (ElectricPokemon) pokemon;
+                     break;
+            case 2:  pokemon = (FirePokemon) pokemon;
+                     break;
+            case 3:  pokemon = (WaterPokemon) pokemon;
+                     break;
+            default: System.out.println("Invalid input");
+                     break;
+        }
+        return pokemon;
     }
 
     /**
